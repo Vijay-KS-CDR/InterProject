@@ -329,6 +329,80 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   5.5 Crop & Growth Stage Form Controls
+   -------------------------------------------------------------------------- */
+.crop-stage-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.form-label svg {
+  color: var(--accent-mint);
+  flex-shrink: 0;
+}
+
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(18, 28, 36, 0.85);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: var(--radius-sm);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 10px 38px 10px 14px;
+  outline: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-select:hover {
+  border-color: rgba(74, 222, 128, 0.45);
+  background-color: rgba(23, 36, 46, 0.95);
+}
+
+.form-select:focus {
+  border-color: var(--accent-mint);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
+}
+
+.form-select option {
+  background-color: #0e161c;
+  color: #f1f5f9;
+  padding: 8px;
+}
+
+/* --------------------------------------------------------------------------
    6. Drag & Drop Upload Zone
    -------------------------------------------------------------------------- */
 .dropzone {
@@ -923,30 +997,635 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   12. Footer
+   11. Action Button Active State & Nutrients Card Styles
    -------------------------------------------------------------------------- */
-.app-footer {
-  text-align: center;
-  padding: 16px 0;
-  font-size: 0.8rem;
+.btn-primary-active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+  transition: var(--transition);
+}
+
+.btn-primary-active:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-primary-active:active {
+  transform: translateY(0);
+}
+
+.nutrients-card {
+  margin-top: 24px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.85) 0%, rgba(9, 14, 26, 0.9) 100%);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.nutrients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.nutrient-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition);
+}
+
+.nutrient-stat:hover {
+  border-color: rgba(74, 222, 128, 0.3);
+  transform: translateY(-2px);
+}
+
+.nutrient-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+}
+
+.stat-nitrogen .nutrient-badge {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.stat-phosphorus .nutrient-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.stat-potassium .nutrient-badge {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.nutrient-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrient-label {
+  font-size: 0.76rem;
   color: var(--text-dim);
-  border-top: 1px solid var(--border-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.nutrient-value {
+  font-size: 1.55rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: #ffffff;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.nutrient-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.nutrient-disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.param-status.calculated {
+  color: #4ade80 !important;
+  font-weight: 700;
+  font-size: 0.88rem !important;
+}
+
+.param-status.pending {
+  color: #f59e0b !important;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
-   13. Utility Classes
+   12. Interactive Buttons & Badges
+   -------------------------------------------------------------------------- */
+.sample-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: var(--radius-pill);
+  color: #38bdf8 !important;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-left: 6px;
+}
+
+.sample-chip-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.35);
+}
+
+.sample-chip-btn svg {
+  color: #38bdf8;
+}
+
+/* Model Estimated N/P/K Tag */
+.model-estimate-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: var(--radius-pill);
+  color: #4ade80;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 8px 0 10px;
+}
+
+/* --------------------------------------------------------------------------
+   13. Section 3: Groq AI Agricultural Advisor Card
+   -------------------------------------------------------------------------- */
+.advisor-card {
+  grid-column: 1 / -1;
+  background: radial-gradient(ellipse at 80% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 100%, rgba(56, 189, 248, 0.06) 0%, transparent 60%),
+              var(--bg-card);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+}
+
+.step-pill-groq {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.advisor-empty-state {
+  text-align: center;
+  padding: 36px 20px;
+  color: var(--text-dim);
+}
+
+.empty-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px dashed var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  color: var(--text-dim);
+}
+
+.empty-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.empty-desc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.advisor-results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.advisor-block {
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: var(--transition);
+}
+
+.advisor-block:hover {
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.block-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.block-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.01em;
+}
+
+.assessment-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.advisor-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.advisor-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.advisor-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.advisor-list li::before {
+  content: "•";
+  position: absolute;
+  left: 6px;
+  color: var(--accent-mint);
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.concerns-block .advisor-list li::before {
+  color: #fbbf24;
+}
+
+.actions-block .advisor-list li::before {
+  color: #38bdf8;
+}
+
+.monitor-block .advisor-list li::before {
+  color: #c084fc;
+}
+
+.advisor-validation-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-md);
+  color: #fef3c7;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.advisor-validation-callout svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.advisor-fallback-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-md);
+  margin-top: 12px;
+}
+
+.fallback-icon svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fallback-text h4 {
+  color: #fbbf24;
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.fallback-text p {
+  color: #fef3c7;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.fallback-subtext {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.fallback-subtext code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #38bdf8;
+  font-family: var(--font-mono);
+}
+
+/* --------------------------------------------------------------------------
+   14. Professional Analysis Progress Loader Overlay
+   -------------------------------------------------------------------------- */
+.analysis-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 13, 17, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.analysis-card {
+  background: rgba(18, 28, 36, 0.96);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 32px 36px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(16, 185, 129, 0.2);
+  text-align: center;
+  animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.analysis-scanner-graphic {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(74, 222, 128, 0.3);
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(74, 222, 128, 0.35) 90deg, transparent 91deg);
+  animation: radarRotate 2s linear infinite;
+}
+
+@keyframes radarRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.satellite-orbit-icon {
+  width: 42px;
+  height: 42px;
+  color: var(--accent-mint);
+  z-index: 2;
+  animation: orbitPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes orbitPulse {
+  0% { transform: scale(0.96); }
+  100% { transform: scale(1.04); }
+}
+
+.analysis-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.analysis-status-live {
+  font-size: 0.9rem;
+  color: var(--accent-mint);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  min-height: 1.4em;
+  margin-bottom: 20px;
+}
+
+.analysis-progress-container {
+  width: 100%;
+  height: 8px;
+  background: rgba(148, 163, 184, 0.15);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.analysis-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #10b981 0%, #38bdf8 100%);
+  border-radius: var(--radius-pill);
+  transition: width 0.25s linear;
+}
+
+.analysis-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.timeline-step.active {
+  background: rgba(74, 222, 128, 0.08);
+}
+
+.step-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+  font-size: 11px;
+}
+
+.timeline-step.active .step-indicator {
+  border-color: var(--accent-mint);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.timeline-step.completed .step-indicator {
+  border-color: var(--accent-mint);
+  background: var(--accent-mint);
+  color: #080d11;
+  font-weight: 800;
+}
+
+.step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.timeline-step.active .step-dot {
+  background: var(--accent-mint);
+  animation: pulseDot 1s infinite alternate;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+.timeline-step.completed .step-indicator::before {
+  content: "✓";
+}
+
+.step-text {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.timeline-step.active .step-text {
+  color: var(--accent-mint);
+  font-weight: 600;
+}
+
+.timeline-step.completed .step-text {
+  color: #e2e8f0;
+}
+
+.step-time {
+  font-size: 0.74rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   15. Footer
+   -------------------------------------------------------------------------- */
+.app-footer {
+  text-align: center;
+  padding: 18px 0;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   16. Utility Classes
    -------------------------------------------------------------------------- */
 .hidden {
   display: none !important;
 }
 
 /* --------------------------------------------------------------------------
-   14. Responsive Layout (Mobile & Tablet)
+   17. Responsive Layout (Mobile & Tablet)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .advisor-card {
+    grid-column: auto;
   }
 }
 
@@ -966,7 +1645,11 @@ body {
     justify-content: space-between;
   }
 
-  .bands-grid, .params-grid {
+  .crop-stage-row,
+  .advisor-grid-row,
+  .bands-grid,
+  .params-grid,
+  .nutrients-grid {
     grid-template-columns: 1fr;
   }
 
@@ -977,4 +1660,9 @@ body {
   .meta-value {
     max-width: 50%;
   }
+
+  .analysis-card {
+    padding: 24px 20px;
+  }
 }
+

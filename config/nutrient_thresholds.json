@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "description": "Nutrient status classification thresholds for remote-sensing estimated N, P, and K values.",
+    "calibration_source": "Project Synthetic Dataset Percentile Calibration (25th and 75th percentiles per stage).",
+    "calibration_status": "PROTOTYPE_CALIBRATION_REQUIRED",
+    "scientific_disclaimer": "Thresholds represent model prototype bounds. Operational field use strictly requires local agronomic calibration against regional soil testing standards (e.g., ICAR/TNAU/PAU Soil Test Crop Response calibrations)."
+  },
+  "crops": {
+    "Rice": {
+      "Early": {
+        "N": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0},
+        "P": {"low": 12.0, "adequate_min": 12.0, "adequate_max": 17.0, "high": 17.0},
+        "K": {"low": 23.0, "adequate_min": 23.0, "adequate_max": 31.0, "high": 31.0}
+      },
+      "Vegetative": {
+        "N": {"low": 38.0, "adequate_min": 38.0, "adequate_max": 45.0, "high": 45.0},
+        "P": {"low": 17.0, "adequate_min": 17.0, "adequate_max": 22.0, "high": 22.0},
+        "K": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0}
+      },
+      "Flowering": {
+        "N": {"low": 44.0, "adequate_min": 44.0, "adequate_max": 55.0, "high": 55.0},
+        "P": {"low": 22.0, "adequate_min": 22.0, "adequate_max": 27.0, "high": 27.0},
+        "K": {"low": 33.0, "adequate_min": 33.0, "adequate_max": 41.0, "high": 41.0}
+      },
+      "Mature": {
+        "N": {"low": 39.0, "adequate_min": 39.0, "adequate_max": 50.0, "high": 50.0},
+        "P": {"low": 20.0, "adequate_min": 20.0, "adequate_max": 25.0, "high": 25.0},
+        "K": {"low": 31.0, "adequate_min": 31.0, "adequate_max": 38.0, "high": 38.0}
+      }
+    },
+    "Wheat": {
+      "Early": {
+        "N": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0},
+        "P": {"low": 12.0, "adequate_min": 12.0, "adequate_max": 17.0, "high": 17.0},
+        "K": {"low": 23.0, "adequate_min": 23.0, "adequate_max": 31.0, "high": 31.0}
+      },
+      "Vegetative": {
+        "N": {"low": 38.0, "adequate_min": 38.0, "adequate_max": 45.0, "high": 45.0},
+        "P": {"low": 17.0, "adequate_min": 17.0, "adequate_max": 22.0, "high": 22.0},
+        "K": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0}
+      },
+      "Flowering": {
+        "N": {"low": 44.0, "adequate_min": 44.0, "adequate_max": 55.0, "high": 55.0},
+        "P": {"low": 22.0, "adequate_min": 22.0, "adequate_max": 27.0, "high": 27.0},
+        "K": {"low": 33.0, "adequate_min": 33.0, "adequate_max": 41.0, "high": 41.0}
+      },
+      "Mature": {
+        "N": {"low": 39.0, "adequate_min": 39.0, "adequate_max": 50.0, "high": 50.0},
+        "P": {"low": 20.0, "adequate_min": 20.0, "adequate_max": 25.0, "high": 25.0},
+        "K": {"low": 31.0, "adequate_min": 31.0, "adequate_max": 38.0, "high": 38.0}
+      }
+    },
+    "Maize": {
+      "Early": {
+        "N": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0},
+        "P": {"low": 12.0, "adequate_min": 12.0, "adequate_max": 17.0, "high": 17.0},
+        "K": {"low": 23.0, "adequate_min": 23.0, "adequate_max": 31.0, "high": 31.0}
+      },
+      "Vegetative": {
+        "N": {"low": 38.0, "adequate_min": 38.0, "adequate_max": 45.0, "high": 45.0},
+        "P": {"low": 17.0, "adequate_min": 17.0, "adequate_max": 22.0, "high": 22.0},
+        "K": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0}
+      },
+      "Flowering": {
+        "N": {"low": 44.0, "adequate_min": 44.0, "adequate_max": 55.0, "high": 55.0},
+        "P": {"low": 22.0, "adequate_min": 22.0, "adequate_max": 27.0, "high": 27.0},
+        "K": {"low": 33.0, "adequate_min": 33.0, "adequate_max": 41.0, "high": 41.0}
+      },
+      "Mature": {
+        "N": {"low": 39.0, "adequate_min": 39.0, "adequate_max": 50.0, "high": 50.0},
+        "P": {"low": 20.0, "adequate_min": 20.0, "adequate_max": 25.0, "high": 25.0},
+        "K": {"low": 31.0, "adequate_min": 31.0, "adequate_max": 38.0, "high": 38.0}
+      }
+    },
+    "Cotton": {
+      "Early": {
+        "N": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0},
+        "P": {"low": 12.0, "adequate_min": 12.0, "adequate_max": 17.0, "high": 17.0},
+        "K": {"low": 23.0, "adequate_min": 23.0, "adequate_max": 31.0, "high": 31.0}
+      },
+      "Vegetative": {
+        "N": {"low": 38.0, "adequate_min": 38.0, "adequate_max": 45.0, "high": 45.0},
+        "P": {"low": 17.0, "adequate_min": 17.0, "adequate_max": 22.0, "high": 22.0},
+        "K": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0}
+      },
+      "Flowering": {
+        "N": {"low": 44.0, "adequate_min": 44.0, "adequate_max": 55.0, "high": 55.0},
+        "P": {"low": 22.0, "adequate_min": 22.0, "adequate_max": 27.0, "high": 27.0},
+        "K": {"low": 33.0, "adequate_min": 33.0, "adequate_max": 41.0, "high": 41.0}
+      },
+      "Mature": {
+        "N": {"low": 39.0, "adequate_min": 39.0, "adequate_max": 50.0, "high": 50.0},
+        "P": {"low": 20.0, "adequate_min": 20.0, "adequate_max": 25.0, "high": 25.0},
+        "K": {"low": 31.0, "adequate_min": 31.0, "adequate_max": 38.0, "high": 38.0}
+      }
+    },
+    "Sugarcane": {
+      "Early": {
+        "N": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0},
+        "P": {"low": 12.0, "adequate_min": 12.0, "adequate_max": 17.0, "high": 17.0},
+        "K": {"low": 23.0, "adequate_min": 23.0, "adequate_max": 31.0, "high": 31.0}
+      },
+      "Vegetative": {
+        "N": {"low": 38.0, "adequate_min": 38.0, "adequate_max": 45.0, "high": 45.0},
+        "P": {"low": 17.0, "adequate_min": 17.0, "adequate_max": 22.0, "high": 22.0},
+        "K": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0}
+      },
+      "Flowering": {
+        "N": {"low": 44.0, "adequate_min": 44.0, "adequate_max": 55.0, "high": 55.0},
+        "P": {"low": 22.0, "adequate_min": 22.0, "adequate_max": 27.0, "high": 27.0},
+        "K": {"low": 33.0, "adequate_min": 33.0, "adequate_max": 41.0, "high": 41.0}
+      },
+      "Mature": {
+        "N": {"low": 39.0, "adequate_min": 39.0, "adequate_max": 50.0, "high": 50.0},
+        "P": {"low": 20.0, "adequate_min": 20.0, "adequate_max": 25.0, "high": 25.0},
+        "K": {"low": 31.0, "adequate_min": 31.0, "adequate_max": 38.0, "high": 38.0}
+      }
+    },
+    "Default": {
+      "Early": {
+        "N": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0},
+        "P": {"low": 12.0, "adequate_min": 12.0, "adequate_max": 17.0, "high": 17.0},
+        "K": {"low": 23.0, "adequate_min": 23.0, "adequate_max": 31.0, "high": 31.0}
+      },
+      "Vegetative": {
+        "N": {"low": 38.0, "adequate_min": 38.0, "adequate_max": 45.0, "high": 45.0},
+        "P": {"low": 17.0, "adequate_min": 17.0, "adequate_max": 22.0, "high": 22.0},
+        "K": {"low": 28.0, "adequate_min": 28.0, "adequate_max": 36.0, "high": 36.0}
+      },
+      "Flowering": {
+        "N": {"low": 44.0, "adequate_min": 44.0, "adequate_max": 55.0, "high": 55.0},
+        "P": {"low": 22.0, "adequate_min": 22.0, "adequate_max": 27.0, "high": 27.0},
+        "K": {"low": 33.0, "adequate_min": 33.0, "adequate_max": 41.0, "high": 41.0}
+      },
+      "Mature": {
+        "N": {"low": 39.0, "adequate_min": 39.0, "adequate_max": 50.0, "high": 50.0},
+        "P": {"low": 20.0, "adequate_min": 20.0, "adequate_max": 25.0, "high": 25.0},
+        "K": {"low": 31.0, "adequate_min": 31.0, "adequate_max": 38.0, "high": 38.0}
+      }
+    }
+  }
+}

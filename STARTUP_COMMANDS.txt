@@ -1,0 +1,72 @@
+=============================================================================
+AGRICULTURAL AI - STEP-BY-STEP MANUAL STARTUP GUIDE
+=============================================================================
+
+STEP 1: OPEN YOUR TERMINAL
+-----------------------------------------------------------------------------
+Open PowerShell or Command Prompt (CMD) and navigate to the project directory:
+
+    cd d:\InterProject
+
+
+STEP 2: VERIFY ENVIRONMENT CONFIGURATION (.env)
+-----------------------------------------------------------------------------
+Ensure your .env file exists in d:\InterProject\.env and contains your Groq key:
+
+    GROQ_API_KEY=gsk_your_groq_api_key_here
+    GROQ_MODEL=qwen/qwen3.8-27b
+
+
+STEP 3: (OPTIONAL) INSTALL DEPENDENCIES IF NEEDED
+-----------------------------------------------------------------------------
+If you are running on a new machine or environment, install requirements:
+
+    pip install -r requirements.txt
+
+
+STEP 4: START THE APPLICATION SERVER
+-----------------------------------------------------------------------------
+Run the FastAPI Uvicorn server using either command below:
+
+Option A - Development Mode (with automatic code reloading):
+    python -m uvicorn api.app:app --host 127.0.0.1 --port 8000 --reload
+
+Option B - Standard Mode:
+    python -m uvicorn api.app:app --host 127.0.0.1 --port 8000
+
+
+STEP 5: ACCESS THE WEB DASHBOARD
+-----------------------------------------------------------------------------
+Once the server displays:
+    INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+Open your web browser (Chrome, Edge, Firefox) and go to:
+
+    http://127.0.0.1:8000/
+
+
+STEP 6: RUN SATELLITE ANALYSIS
+-----------------------------------------------------------------------------
+1. On the web dashboard, select a Crop (e.g. Rice) and Growth Stage (e.g. Vegetative).
+2. Either drag & drop your multispectral GeoTIFF (.tif) or click "load sample GeoTIFF".
+3. The ~3-second analysis loader will run through the 5 stages.
+4. The dashboard will display:
+   - Section 1: 6 Satellite Features (NDVI, EVI, FVC, LAI, Texture, Biomass)
+   - Section 2: Model Estimated N/P/K
+   - Section 3: Groq AI Agricultural Advisory
+
+
+STEP 7: (OPTIONAL) RUN AUTOMATED TEST SUITE
+-----------------------------------------------------------------------------
+In a separate terminal window inside d:\InterProject, run:
+
+    python tests/test_groq_integration.py
+
+
+STEP 8: TO STOP THE SERVER
+-----------------------------------------------------------------------------
+Press:
+    CTRL + C
+in the terminal where Uvicorn is running.
+
+=============================================================================

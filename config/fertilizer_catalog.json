@@ -1,0 +1,94 @@
+{
+  "fertilizer_products": {
+    "Urea": {
+      "name": "Urea",
+      "grade": "46-0-0",
+      "composition": {
+        "N_pct": 46.0,
+        "P2O5_pct": 0.0,
+        "K2O_pct": 0.0
+      },
+      "nutrient_supplied": "Nitrogen (N)",
+      "kg_product_per_kg_nutrient": {
+        "N": 2.174
+      },
+      "suitable_stages": ["Early", "Vegetative", "Flowering"],
+      "management_note": "Apply in split doses (e.g. basal + vegetative topdressing) to minimize leaching and ammonia volatilization. Avoid broad application during mature/ripening stage."
+    },
+    "DAP": {
+      "name": "Di-Ammonium Phosphate (DAP)",
+      "grade": "18-46-0",
+      "composition": {
+        "N_pct": 18.0,
+        "P2O5_pct": 46.0,
+        "K2O_pct": 0.0
+      },
+      "nutrient_supplied": "Phosphorus (P) and Nitrogen (N)",
+      "kg_product_per_kg_nutrient": {
+        "P2O5": 2.174,
+        "N_co_supplied": 0.391
+      },
+      "suitable_stages": ["Early", "Vegetative"],
+      "management_note": "Primarily applied at basal / early planting stage. Insoluble P fixates in soil; localized band placement near root zone is recommended."
+    },
+    "MOP": {
+      "name": "Muriate of Potash (MOP / Potassium Chloride)",
+      "grade": "0-0-60",
+      "composition": {
+        "N_pct": 0.0,
+        "P2O5_pct": 0.0,
+        "K2O_pct": 60.0
+      },
+      "nutrient_supplied": "Potassium (K)",
+      "kg_product_per_kg_nutrient": {
+        "K2O": 1.667
+      },
+      "suitable_stages": ["Early", "Vegetative", "Flowering"],
+      "management_note": "Essential for osmotic regulation, enzymatic activation, and drought tolerance. In light/sandy soils, apply in splits with Nitrogen."
+    },
+    "SSP": {
+      "name": "Single Super Phosphate (SSP)",
+      "grade": "0-16-0 + 11% S + 19% Ca",
+      "composition": {
+        "N_pct": 0.0,
+        "P2O5_pct": 16.0,
+        "K2O_pct": 0.0
+      },
+      "nutrient_supplied": "Phosphorus (P), Sulfur (S), Calcium (Ca)",
+      "kg_product_per_kg_nutrient": {
+        "P2O5": 6.25
+      },
+      "suitable_stages": ["Early"],
+      "management_note": "Ideal basal phosphorus source especially for sulfur-demanding crops (oilseeds, pulses) and calcium-deficient soils."
+    },
+    "NPK_19_19_19": {
+      "name": "NPK 19-19-19 (Water Soluble Complex)",
+      "grade": "19-19-19",
+      "composition": {
+        "N_pct": 19.0,
+        "P2O5_pct": 19.0,
+        "K2O_pct": 19.0
+      },
+      "nutrient_supplied": "Balanced N, P, and K",
+      "kg_product_per_kg_nutrient": {
+        "N": 5.263,
+        "P2O5": 5.263,
+        "K2O": 5.263
+      },
+      "suitable_stages": ["Vegetative", "Flowering"],
+      "management_note": "100% water soluble; suitable for fertigation or corrective foliar spray during active vegetative and flowering stages."
+    }
+  },
+  "agronomic_principles": {
+    "yield_multi_factors": [
+      "Water availability and irrigation scheduling",
+      "Crop cultivar/hybrid genetics and seed viability",
+      "Planting density and canopy spatial geometry",
+      "Soil physical structure, texture, and organic matter content",
+      "Soil pH and secondary/micronutrient balance (Zn, Fe, B, S)",
+      "Weed, pest, and fungal disease pressure",
+      "Ambient temperature, solar radiation, and extreme weather events"
+    ],
+    "yield_warning": "High fertilizer dosage does NOT guarantee high yield. Yield is governed by Liebig's Law of the Minimum, where growth is constrained by the scarcest resource (e.g. water, micronutrients, or pest control), not by the total amount of nutrients added."
+  }
+}
